@@ -11,4 +11,10 @@ public class Blog_Home_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog_home_screen);
     }
+
+    @Override
+    public void finish(){
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_up,R.anim.slide_out_left);
+    }
 }
