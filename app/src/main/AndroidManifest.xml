@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitness_app">
         <activity
+            android:name=".Blog_Home_Screen"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
