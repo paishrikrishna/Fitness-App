@@ -36,7 +36,7 @@ public class webview extends AppCompatActivity {
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient());
-        //mWebView.loadUrl("https://sourceofsupplements.com/");
         mWebView.loadUrl(url);
     }
+
 }
