@@ -106,11 +106,7 @@ public class Blog_Home_Screen extends AppCompatActivity {
 
     }
 
-    @Override
-    public void finish(){
-        super.finish();
-        overridePendingTransition(R.anim.slide_in_up,R.anim.slide_out_left);
-    }
+
 
     private void toast(String s) {
         Toast.makeText(Blog_Home_Screen.this, s, Toast.LENGTH_SHORT).show();
