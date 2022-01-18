@@ -1,2 +1,3 @@
 # Fitness-App
-
+#Json Data received from server for blogs
+{"thumbnail": ["https://www.nerdfitness.com/wp-content/uploads/2014/07/deadlift-713x475.jpg", "https://rosstraining.com/images/intent.jpg", "https://www.fitnessvsweightloss.com/wp-content/uploads/2016/04/Junaid-Kaliwala-body-building-secrets-e1461567908153.jpg", "https://i.ytimg.com/vi/gC_L9qAHVJ8/maxresdefault.jpg"], "type": ["Blog", "Blog", "Blog", "Video"], "title": ["How to Deadlift Safely With Proper Form: Step-by-Step", "Sledgehammer Training with Intent", "Junaid Kaliwala \u2013 The Journey From Gym To Arnold Classics", "30 minute fat burning home workout for beginners. Achievable, low impact results."], "url": ["https://www.nerdfitness.com/blog/", "http://rosstraining.com/blog/", "https://www.fitnessvsweightloss.com/junaid-kaliwala/", "https://www.youtube.com/watch?v=gC_L9qAHVJ8"]}
