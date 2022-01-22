@@ -41,8 +41,7 @@ public class Blog_Home_Screen extends AppCompatActivity {
         setContentView(R.layout.activity_blog_home_screen);
         ImageView work = (ImageView) findViewById(R.id.workout);
         ImageView food = (ImageView) findViewById(R.id.food);
-        ImageView suppliment = (ImageView) findViewById(R.id.suppliment);
-        ImageView body = (ImageView) findViewById(R.id.body);
+
 
         nestedScrollView = findViewById(R.id.main_scroll);
         recyclerView = findViewById(R.id.blogs);
@@ -85,22 +84,7 @@ public class Blog_Home_Screen extends AppCompatActivity {
                 getContext().startActivity(i);
             }
         });
-        suppliment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toast("Suppliment blog section");
-                Intent i = new Intent(getContext(), category_blog.class);
-                getContext().startActivity(i);
-            }
-        });
-        body.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toast("Body blog section");
-                Intent i = new Intent(getContext(), category_blog.class);
-                getContext().startActivity(i);
-            }
-        });
+
 
  */
 

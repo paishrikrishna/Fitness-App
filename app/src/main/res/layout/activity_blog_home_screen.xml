@@ -22,28 +22,47 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="17dp"
-                android:src="@drawable/home_text"
+                android:text="Blogs"
+                android:textSize="20sp"
+                android:lineHeight="23sp"
+                android:textColor="#000000"
                 />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.6"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="4dp"
+                android:layout_width="wrap_content"
                 android:layout_gravity="right"
-                android:layout_height="16dp"
-                android:layout_marginLeft="13dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/search" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="right"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/menu_bar_dots" />
+                android:background="@drawable/book_mark" />
 
         </LinearLayout>
 
@@ -70,12 +89,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/blog_category_title"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="24dp"/>
+                        android:layout_marginTop="17dp"
+                        android:text="Categories"
+                        android:textSize="16sp"
+                        android:lineHeight="19sp"
+                        android:textColor="#000000"
+                        />
 
                 </LinearLayout>
 
@@ -98,31 +121,21 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/workou"
+                                android:src="@drawable/work_out_card"
                                 android:id="@+id/workout"
                                 android:layout_marginLeft="16dp"/>
 
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/supp"
-                                android:id="@+id/suppliment"
-                                android:layout_marginLeft="16dp"/>
+
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/foodi"
+                                android:src="@drawable/nutri_card"
                                 android:id="@+id/food"
                                 android:layout_marginLeft="16dp"/>
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/body"
-                                android:src="@drawable/hh"
-                                android:layout_marginLeft="16dp"/>
+
 
                         </LinearLayout>
                     </HorizontalScrollView>
@@ -140,11 +153,15 @@
                         android:id="@+id/te"
                         android:layout_marginTop="32dp">
 
-                        <ImageView
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/latest_title"
                             android:layout_marginLeft="16dp"
+                            android:layout_marginTop="17dp"
+                            android:text="Recently Added"
+                            android:textSize="16sp"
+                            android:lineHeight="19sp"
+                            android:textColor="#000000"
                             />
 
                     </LinearLayout>
