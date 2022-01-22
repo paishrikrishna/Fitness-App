@@ -10,7 +10,8 @@
         <entry key="app/src/main/res/drawable-v24/play.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable-v24/splash_logo.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/workout_card.xml" value="0.371875" />
-        <entry key="app/src/main/res/layout/activity_blog_home_screen.xml" value="0.2694746376811594" />
+        <entry key="app/src/main/res/layout/activity_blog_category.xml" value="0.2418478260869565" />
+        <entry key="app/src/main/res/layout/activity_blog_home_screen.xml" value="0.20430107526881722" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2694746376811594" />
         <entry key="app/src/main/res/layout/activity_webview.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/blog_card.xml" value="0.26268115942028986" />

@@ -46,12 +46,12 @@ public class Blog_Home_Screen extends AppCompatActivity {
         nestedScrollView = findViewById(R.id.main_scroll);
         recyclerView = findViewById(R.id.blogs);
         progressBar = findViewById(R.id.progress_bar);
-
+        progressBar.getIndeterminateDrawable().setColorFilter(0xFFFF0000, android.graphics.PorterDuff.Mode.MULTIPLY);
 
         category_adapter = new blog_adapter(Blog_Home_Screen.this,data_array);
         recyclerView.setLayoutManager(new LinearLayoutManager(Blog_Home_Screen.this));
         recyclerView.setAdapter(category_adapter);
-        getdata(page,limit);
+        initial_data_load(page,limit);
 
         nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
@@ -59,6 +59,7 @@ public class Blog_Home_Screen extends AppCompatActivity {
                 if(scrollY == v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()){
                     page ++;
                     progressBar.setVisibility(View.VISIBLE);
+
                     getdata(page,limit);
                 }
                 else{
@@ -67,26 +68,24 @@ public class Blog_Home_Screen extends AppCompatActivity {
             }
         });
 
-/*
+
         work.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 toast("Workout blog section");
-                Intent i = new Intent(getContext(), category_blog.class);
-                getContext().startActivity(i);
+                initial_data_load(page,limit);
             }
         });
         food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 toast("Food blog section");
-                Intent i = new Intent(getContext(), category_blog.class);
-                getContext().startActivity(i);
+                initial_data_load(page,limit);
             }
         });
 
 
- */
+
 
     }
 
@@ -99,7 +98,62 @@ public class Blog_Home_Screen extends AppCompatActivity {
         String type = "video";
         RequestQueue queue = Volley.newRequestQueue(Blog_Home_Screen.this);
         String url ="http://vw1.pythonanywhere.com/test/";
-        //String url = "http://192.168.0.187:8000/test/";
+
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        JSONArray la , n , t , url;
+
+                        try {
+                            JSONObject root = new JSONObject(response.toString());
+                            //tv.setText(root.getString("status"));
+                            n = root.getJSONArray("thumbnail");
+                            t =  root.getJSONArray("type");
+                            la =  root.getJSONArray("title");
+                            url =  root.getJSONArray("url");
+
+
+                            for(int j = 0; j<n.length();j++) {
+                                data_array.add(new blog_data(String.valueOf(la.get(j)), String.valueOf(t.get(j)), String.valueOf(n.get(j)),String.valueOf(url.get(j)) ));
+                            }
+
+                            category_adapter.setItems(data_array);
+                            category_adapter.notifyDataSetChanged();
+                            page = limit;
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
+
+    }
+
+    private void initial_data_load(int pag, int limit) {
+        data_array.clear();
+        category_adapter.setItems(data_array);
+        category_adapter.notifyDataSetChanged();
+        page = 1;
+        String type = "video";
+        RequestQueue queue = Volley.newRequestQueue(Blog_Home_Screen.this);
+        String url ="http://vw1.pythonanywhere.com/test/";
+
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
